@@ -1,0 +1,614 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg, #ff9a56, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c, #4facfe, #00f2fe);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      font-family: 'Crimson Text', serif;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255, 105, 180, 0.2) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 80%, rgba(138, 43, 226, 0.2) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes headerGradient {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes headerFloat {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .main-header {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 0;
+      padding: 5px 10px 0 10px;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #f093fb, #f5576c);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: headerGradient 4s ease-in-out infinite, headerFloat 3s ease-in-out infinite;
+      filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 30px rgba(255, 107, 107, 0.6));
+      text-shadow: 0 0 20px rgba(255, 107, 107, 0.8), 0 0 40px rgba(78, 205, 196, 0.6), 3px 3px 8px rgba(0, 0, 0, 0.9));
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 100;
+      line-height: 0.9;
+    }
+
+    .main-container {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 0 10px 10px 10px;
+      max-height: calc(100vh - 60px);
+    }
+
+    .divset {
+      position: relative;
+      height: 500px;
+      width: 500px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    }
+
+    .rotate-center {
+      animation: rotate-center 8s linear infinite both;
+    }
+
+    .img_one {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 450px;
+      height: 450px;
+      margin-top: -225px;
+      margin-left: -225px;
+      opacity: 0.9;
+    }
+
+    .img_two {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 350px;
+      height: 350px;
+      margin-top: -175px;
+      margin-left: -175px;
+      opacity: 0.8;
+    }
+
+    .img_three {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 280px;
+      height: 280px;
+      margin-top: -140px;
+      margin-left: -140px;
+      opacity: 0.7;
+    }
+
+    @keyframes rotate-center {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .rotate-center-sec {
+      animation: rotate-center-re 12s linear infinite reverse both;
+    }
+
+    @keyframes rotate-center-re {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .rotate-center-third {
+      animation: rotate-center-th 16s linear infinite both;
+    }
+
+    @keyframes rotate-center-th {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .ganeshJee {
+      position: absolute;
+      top: 50%;
+      left: 50%; 
+      width: 400px;
+      height: 400px;
+      margin-top: -200px;
+      margin-left: -200px;
+      z-index: 10;
+      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.6));
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .ganeshJee:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.8));
+    }
+
+    /* Candles Styles */
+    .candles-container {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 20;
+    }
+
+    .candle {
+      position: relative;
+      width: 16px;
+      height: 45px;
+      background: linear-gradient(to bottom, #8B4513, #CD853F);
+      border-radius: 8px 8px 2px 2px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .candle::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 12px;
+      background: #2C1810;
+      border-radius: 2px;
+    }
+
+    .flame {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 16px;
+      background: radial-gradient(ellipse, #FFD700 30%, #FF6B35 60%, #FF4500 100%);
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      animation: flameFlicker 1s ease-in-out infinite alternate;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+
+    .candle.lit .flame {
+      opacity: 1;
+    }
+
+    @keyframes flameFlicker {
+      0% {
+        transform: translateX(-50%) scale(1) rotate(-2deg);
+      }
+      100% {
+        transform: translateX(-50%) scale(1.1) rotate(2deg);
+      }
+    }
+
+    .buttons-container {
+      position: absolute;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 30;
+    }
+
+    .light-button {
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #FF6B35, #F7931E);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(255, 107, 53, 0.4);
+    }
+
+    .light-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 107, 53, 0.6);
+    }
+
+    .light-button:active {
+      transform: translateY(-1px);
+    }
+
+    .flower-button {
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #FF69B4, #FF1493);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 10px rgba(255, 105, 180, 0.4);
+    }
+
+    .flower-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.6);
+    }
+
+    .flower-button:active {
+      transform: translateY(-1px);
+    }
+
+    /* Flower Petals */
+    .flower-petal {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: linear-gradient(45deg, #FF69B4, #FFB6C1, #FFC0CB);
+      border-radius: 50% 0 50% 0;
+      animation: petalFall 4s linear infinite;
+      opacity: 0.8;
+      z-index: 5;
+    }
+
+    .flower-petal:nth-child(even) {
+      background: linear-gradient(45deg, #FF1493, #FF69B4, #FFB6C1);
+      border-radius: 0 50% 0 50%;
+    }
+
+    .flower-petal.marigold {
+      background: linear-gradient(45deg, #FFA500, #FFD700, #FFFF00);
+    }
+
+    .flower-petal.rose {
+      background: linear-gradient(45deg, #DC143C, #FF1493, #FFB6C1);
+    }
+
+    .flower-petal.jasmine {
+      background: linear-gradient(45deg, #F5F5F5, #FFFAFA, #F0F8FF);
+    }
+
+    @keyframes petalFall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .praise-button {
+      display: none; /* Hidden since we moved it to center */
+    }
+
+    /* Decorative Elements */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: sparkle 2s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .sparkle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 30%; right: 20%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 1.5s; }
+
+    /* Floating particles */
+    .particle {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: radial-gradient(circle, #ffd700, #ff6b35);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+      }
+      33% {
+        transform: translateY(-20px) translateX(10px) rotate(120deg);
+      }
+      66% {
+        transform: translateY(-10px) translateX(-10px) rotate(240deg);
+      }
+    }
+
+    .particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; animation-duration: 8s; }
+    .particle:nth-child(2) { top: 20%; right: 10%; animation-delay: 1s; animation-duration: 7s; }
+    .particle:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 2s; animation-duration: 9s; }
+    .particle:nth-child(4) { bottom: 10%; right: 15%; animation-delay: 3s; animation-duration: 6s; }
+
+    .attribution {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .attribution:hover {
+      background: rgba(0, 0, 0, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Responsive Design */
+    @media only screen and (max-height: 700px) {
+      .main-header {
+        font-size: 2.8rem;
+        margin: 0;
+        padding: 3px 5px 0 5px;
+        line-height: 0.8;
+      }
+      
+      .main-container {
+        padding: 0 10px 5px 10px;
+        max-height: calc(100vh - 50px);
+      }
+      
+      .divset {
+        height: 400px;
+        width: 400px;
+      }
+      
+      .img_one {
+        width: 350px;
+        height: 350px;
+        margin-top: -175px;
+        margin-left: -175px;
+      }
+      
+      .img_two {
+        width: 280px;
+        height: 280px;
+        margin-top: -140px;
+        margin-left: -140px;
+      }
+      
+      .img_three {
+        width: 220px;
+        height: 220px;
+        margin-top: -110px;
+        margin-left: -110px;
+      }
+      
+      .ganeshJee {
+        width: 320px;
+        height: 320px;
+        margin-top: -160px;
+        margin-left: -160px;
+      }
+      
+      .candles-container {
+        bottom: -40px;
+        gap: 15px;
+      }
+      
+      .buttons-container {
+        bottom: -105px;
+        gap: 10px;
+      }
+      
+      .light-button, .flower-button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .main-header {
+        font-size: 2.5rem;
+        margin: 0;
+        padding: 2px 5px 0 5px;
+        letter-spacing: 1px;
+        line-height: 0.85;
+      }
+      
+      .main-container {
+        padding: 0 5px 5px 5px;
+        max-height: calc(100vh - 45px);
+      }
+      
+      .divset {
+        height: 350px;
+        width: 350px;
+      }
+      
+      .candles-container {
+        bottom: -35px;
+        gap: 12px;
+      }
+      
+      .buttons-container {
+        bottom: -95px;
+        gap: 8px;
+      }
+      
+      .light-button, .flower-button {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+      
+      .candle {
+        width: 12px;
+        height: 35px;
+      }
+      
+      .img_one, .img_two, .img_three, .ganeshJee {
+        width: 280px;
+        height: 280px;
+        margin-top: -140px;
+        margin-left: -140px;
+      }
+      
+      .img_two {
+        width: 230px;
+        height: 230px;
+        margin-top: -115px;
+        margin-left: -115px;
+      }
+      
+      .img_three {
+        width: 180px;
+        height: 180px;
+        margin-top: -90px;
+        margin-left: -90px;
+      }
+      
+      .attribution {
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        padding: 6px 10px;
+      }
+
+      .praise-button {
+        bottom: 60px;
+        right: 12px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .main-header {
+        font-size: 2rem;
+        margin: 0;
+        padding: 2px 3px 0 3px;
+        letter-spacing: 0.5px;
+        line-height: 0.8;
+      }
+
+      .main-container {
+        padding: 0 5px 5px 5px;
+        max-height: calc(100vh - 40px);
+      }
+
+      .divset {
+        height: 300px;
+        width: 300px;
+      }
+      
+      .candles-container {
+        gap: 10px;
+        bottom: -30px;
+      }
+      
+      .buttons-container {
+        bottom: -75px;
+        gap: 8px;
+      }
+      
+      .light-button, .flower-button {
+        padding: 5px 10px;
+        font-size: 11px;
+      }
+    }
+ 
